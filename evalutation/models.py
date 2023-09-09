@@ -16,10 +16,12 @@ class SNN_1(nn.Module):
 
             layer.Linear(200, 50, bias=False),
             neuron.LIFNode(surrogate_function=surrogate.Sigmoid()),
+            # maybe dropout or Layer or Batch normalization here
 
             layer.Linear(50, 2, bias=False),
             neuron.LIFNode(surrogate_function=surrogate.Sigmoid()))
-
+           # maybe dropout or Layer or Batch normalization here
+        
         self.lin_fc = lin_fc
 
         functional.set_step_mode(self, step_mode='m')
